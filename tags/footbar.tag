@@ -4,11 +4,12 @@
 
 	<p>Change Username?</p> <input ref="username" type="text" placeholder={ opts.user.username } onchange={ updateUsername }>
 
+	<button type="button" onclick = {parent.delete}>Delete User Info</button>
+	
 	<script>
-		var that = this;
-		console.log('footbar.tag');
+		console.log('footbar', this.parent.delete);
 
-		updateUsername(e) {
+		updateUsername(event) {
 			this.opts.user.username = this.refs.username.value;
 			this.opts.user.email = this.refs.username.value + "tc.columbia.edu";
 			this.parent.update();
@@ -18,6 +19,7 @@
 	<style>
 		:scope {
 			display: block;
+			background-color: blue;
 		}
 	</style>
 </footbar>
